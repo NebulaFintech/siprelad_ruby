@@ -2,10 +2,11 @@ module Siprelad
   module Mixins
     module Insert
       module ClassMethods
-        def Insert(params={})
+        def insert(params={})
           requestor = Requestor.new
           response = requestor.request(insert_operation, params)
-          parse_response(response, insert_operation)
+          puts response.inspect
+          # parse_response(response, insert_operation)
         end
       end
       def self.included(base)
