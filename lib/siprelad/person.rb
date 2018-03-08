@@ -1,6 +1,7 @@
 module Siprelad
   class Person < Resource
     include Mixins::Select
+    include Mixins::Insert
     ATTRIBUTES = [:a_materno, :a_paterno, :activo, :alto_riesgo,
       :alto_riesgo_por_act_economica, :alto_riesgo_por_lista_negra,
       :alto_riesgo_por_nacionalidad, :alto_riesgo_por_pep,
