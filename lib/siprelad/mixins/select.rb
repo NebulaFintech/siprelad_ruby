@@ -2,7 +2,7 @@ module Siprelad
   module Mixins
     module Select
       module ClassMethods
-        def select(params={})
+        def select(params = {})
           requestor = Requestor.new
           response = requestor.request(select_operation, params)
           parse_response(response, select_operation)

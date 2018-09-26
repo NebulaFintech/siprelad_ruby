@@ -1,10 +1,10 @@
-require "siprelad/version"
-require "siprelad/mixins/select"
-require "siprelad/mixins/insert"
-require "siprelad/resource"
-require "siprelad/person"
-require "siprelad/requestor"
-require "savon"
+require 'siprelad/version'
+require 'siprelad/mixins/select'
+require 'siprelad/mixins/insert'
+require 'siprelad/resource'
+require 'siprelad/person'
+require 'siprelad/requestor'
+require 'savon'
 module Savon
   class Response
     def initialize(http, globals, locals)
@@ -22,7 +22,7 @@ module Savon
       response = Savon.notify_observers(@name, builder, @globals, @locals)
       response ||= call_with_logging build_request(builder)
 
-      raise_expected_httpi_response! unless response.kind_of?(HTTPI::Response)
+      raise_expected_httpi_response! unless response.is_a?(HTTPI::Response)
 
       create_response(response)
     end
@@ -43,7 +43,7 @@ module Siprelad
 
   class Configuration
     require 'savon'
-    WSDL = 'http://internal-elb-shared-priv-pld-1296134306.us-east-1.elb.amazonaws.com/WCF_PLD/Service.svc?wsdl'
+    WSDL = 'http://internal-elb-shared-priv-pld-1296134306.us-east-1.elb.amazonaws.com/WCF_PLD/Service.svc?wsdl'.freeze
     attr_accessor :open_timeout, :read_timeout, :user, :password, :connection
 
     def initialize

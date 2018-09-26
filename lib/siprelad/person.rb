@@ -2,48 +2,50 @@ module Siprelad
   class Person < Resource
     include Mixins::Select
     include Mixins::Insert
-    ATTRIBUTES = [:a_materno, :a_paterno, :activo, :alto_riesgo,
-      :alto_riesgo_por_act_economica, :alto_riesgo_por_lista_negra,
-      :alto_riesgo_por_nacionalidad, :alto_riesgo_por_pep,
-      :alto_riesgo_por_residencia, :alto_riesgo_por_ser_persona_bloque,
-      :curp, :calle, :clave_empresa, :codigo_postal, :colonia,
-      :documentacion_de_justificacion, :expediente, :fecha_de_ingreso,
-      :fecha_de_nacimiento_o_constitucio, :genero, :id_actividad_economica,
-      :id_estado, :id_grupo, :id_localidad, :id_nacionalidad,
-      :id_ocupacion, :id_pais, :id_pais_de_nacimiento,
-      :id_persona, :id_sucursal_socio, :id_tipo_persona,
-      :log_error, :no_de_cliente, :nombre, :numero_ext,
-      :numero_int, :rfc, :razones_de_riesgo, :telefono_particular_u_oficina]
-      attr_reader(*ATTRIBUTES)
+    ATTRIBUTES = %i[id_sucursal_socio id_grupo no_de_cliente
+                    fecha_de_ingreso nombre a_paterno a_materno
+                    fecha_de_nacimiento_o_constitucio rfc curp genero
+                    id_nacionalidad id_pais_de_nacimiento id_tipo_persona
+                    id_ocupacion id_actividad_economica calle numero_ext
+                    numero_int colonia codigo_postal id_pais id_estado
+                    id_localidad telefono_particular_u_oficina
+                    rol_de_persona tipo_usuario numero_id_oficial
+                    firma_electronica estado_nacimiento correo_electronico].freeze
 
-      # insert params
-      # @Sucursal
-      # @Grupo
-      # @NumCliente
-      # @ApPaterno
-      # @ApMaterno
-      # @Nombre
-      # @RFC
-      # @CURP
-      # @TipoPersona
-      # @FechaNac (20)
-      # @Nacionalidad
-      # @Calle
-      # @NumExterior
-      # @NumInterior
-      # @Colonia
-      # @Localidad
-      # @Estado
-      # @CP
-      # @Pais
-      # @Telefono
-      # @Ocupacion
-      # @FechaIngreso
-      # @Actividad
-      # @Genero
-      # @PaisDeNacimiento
-    def initialize(options={})
-    end
+    attr_reader(*ATTRIBUTES)
+    # insert and update param
+    # @IdSucursalSocio
+    # @IdGrupo
+    # @NoDeCliente
+    # @FechaIngreso
+    # @Nombre
+    # @APaterno
+    # @AMaterno
+    # @FechaDeNacimientoOConstitucio
+    # @RFC
+    # @CURP
+    # @Genero
+    # @IdNacionalidad
+    # @IdPaisDeNacimiento
+    # @IdTipoPersona
+    # @IdOcupacion
+    # @IdActividadEconomica
+    # @Calle
+    # @NumExt
+    # @NumInt
+    # @Colonia
+    # @CodigoPostal
+    # @IdPais
+    # @IdEstado
+    # @IdLocalidad
+    # @TelefonoParticularUOficina
+    # @RolDePersona
+    # @TipoUsuario
+    # @NumeroIdOficial
+    # @FirmaElectronica
+    # @EstadoNacimiento
+    # @CorreoElectronico
+    def initialize(options = {}); end
 
     def self.select_operation
       :persona_select
