@@ -13,6 +13,11 @@ RSpec.describe Siprelad::Person do
     expect(person.rfc).to eq('MURGM890215')
   end
 
+  it 'gets a person by id' do
+    allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(persona_select_response)
+    person = Siprelad::Person.select('IdPersona' => 1)
+  end
+
   it 'inserts a person' do
     allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(persona_insert_response)
     person = Siprelad::Person.insert('Nombre' => 'Alejandro')

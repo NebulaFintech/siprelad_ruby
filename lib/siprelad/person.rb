@@ -54,5 +54,9 @@ module Siprelad
     def self.insert_operation
       :persona_insert
     end
+
+    def self.select_id_operation
+      :persona_select_id
+    end
   end
 end

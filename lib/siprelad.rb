@@ -51,9 +51,8 @@ module Siprelad
       open_timeout: configuration.open_timeout,
       read_timeout: configuration.read_timeout,
       env_namespace: 'soap',
-      #namespace_identifier: '',
       namespaces: configuration.namespaces,
-      element_form_default: :unqualified
+      element_form_default: :qualified
     )
   end
 end
