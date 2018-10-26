@@ -10,7 +10,7 @@ module Siprelad
         def select_id(params = {})
           requestor = Requestor.new
           response = requestor.request(select_id_operation, params)
-          parse_response(response, select_operation)
+          parse_response(response, select_id_operation)
         end
       end
       def self.included(base)
