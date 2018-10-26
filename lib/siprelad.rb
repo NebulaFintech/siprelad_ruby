@@ -4,6 +4,7 @@ require 'siprelad/mixins/insert'
 require 'siprelad/resource'
 require 'siprelad/person'
 require 'siprelad/requestor'
+require 'siprelad/configuration'
 require 'savon'
 module Savon
   class Response
@@ -20,6 +21,7 @@ module Savon
     def call(locals = {}, &block)
       builder = build(locals, &block)
       response = Savon.notify_observers(@name, builder, @globals, @locals)
+      puts build_request(builder).inspect
       response ||= call_with_logging build_request(builder)
 
       raise_expected_httpi_response! unless response.is_a?(HTTPI::Response)
@@ -32,26 +34,26 @@ module Siprelad
   require 'active_support'
   require 'active_support/core_ext'
 
-  class << self
-    attr_accessor :configuration
-  end
-
   def self.configure
-    self.configuration ||= Configuration.new
     yield(configuration)
+    set_connection(configuration)
   end
 
-  class Configuration
-    require 'savon'
-    WSDL = 'http://internal-elb-shared-priv-pld-1296134306.us-east-1.elb.amazonaws.com/WCF_PLD/Service.svc?wsdl'.freeze
-    attr_accessor :open_timeout, :read_timeout, :user, :password, :connection
+  def self.configuration
+    @configuration ||= Configuration.new
+  end
 
-    def initialize
-      @open_timeout = 5
-      @read_timeout = 5
-      @user = nil
-      @password = nil
-      @connection = Savon.client(wsdl: WSDL, open_timeout: @open_timeout, read_timeout: @read_timeout, element_form_default: :qualified)
-    end
+  private
+
+  def self.set_connection(configuration)
+    configuration.connection = Savon.client(
+      wsdl: configuration.wsdl,
+      open_timeout: configuration.open_timeout,
+      read_timeout: configuration.read_timeout,
+      env_namespace: 'soap',
+      namespace_identifier: 'xw',
+      namespaces: configuration.namespaces,
+      element_form_default: :qualified
+    )
   end
 end
