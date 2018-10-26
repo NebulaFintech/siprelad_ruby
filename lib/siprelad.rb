@@ -6,30 +6,7 @@ require 'siprelad/person'
 require 'siprelad/requestor'
 require 'siprelad/configuration'
 require 'savon'
-module Savon
-  class Response
-    def initialize(http, globals, locals)
-      @http    = http
-      @globals = globals
-      @locals  = locals
-      puts http.inspect
-      build_soap_and_http_errors!
-      raise_soap_and_http_errors! if @globals[:raise_errors]
-    end
-  end
-  class Operation
-    def call(locals = {}, &block)
-      builder = build(locals, &block)
-      response = Savon.notify_observers(@name, builder, @globals, @locals)
-      puts build_request(builder).inspect
-      response ||= call_with_logging build_request(builder)
-
-      raise_expected_httpi_response! unless response.is_a?(HTTPI::Response)
-
-      create_response(response)
-    end
-  end
-end
+require 'savon_logger_helper'
 module Siprelad
   require 'active_support'
   require 'active_support/core_ext'

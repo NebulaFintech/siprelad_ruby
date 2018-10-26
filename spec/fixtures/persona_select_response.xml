@@ -1,1 +1,43 @@
-<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"><s:Body><PersonaSelectResponse xmlns="http://tempuri.org/"><PersonaSelectResult xmlns:a="http://schemas.datacontract.org/2004/07/WCF_PLD" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><a:ServicePLD.Persona><a:AMaterno>González</a:AMaterno><a:APaterno>Murga</a:APaterno><a:Activo>0</a:Activo><a:AltoRiesgo i:nil="true"/><a:AltoRiesgoPorActEconomica i:nil="true"/><a:AltoRiesgoPorListaNegra i:nil="true"/><a:AltoRiesgoPorNacionalidad i:nil="true"/><a:AltoRiesgoPorPep i:nil="true"/><a:AltoRiesgoPorResidencia i:nil="true"/><a:AltoRiesgoPorSerPersonaBloque i:nil="true"/><a:CURP/><a:Calle>Río Támesis</a:Calle><a:ClaveEmpresa>0010</a:ClaveEmpresa><a:CodigoPostal>64700</a:CodigoPostal><a:Colonia>Roma</a:Colonia><a:DocumentacionDeJustificacion i:nil="true"/><a:Expediente/><a:FechaDeIngreso>2017-12-21T12:00:00Z</a:FechaDeIngreso><a:FechaDeNacimientoOConstitucio>1989-02-15T12:00:00Z</a:FechaDeNacimientoOConstitucio><a:Genero>M</a:Genero><a:IdActividadEconomica>1</a:IdActividadEconomica><a:IdEstado>9</a:IdEstado><a:IdGrupo>1</a:IdGrupo><a:IdLocalidad>1521</a:IdLocalidad><a:IdNacionalidad>2</a:IdNacionalidad><a:IdOcupacion>0</a:IdOcupacion><a:IdPais>1</a:IdPais><a:IdPaisDeNacimiento>1</a:IdPaisDeNacimiento><a:IdPersona i:nil="true"/><a:IdSucursalSocio>1</a:IdSucursalSocio><a:IdTipoPersona>1</a:IdTipoPersona><a:LogError i:nil="true"/><a:NoDeCliente>1</a:NoDeCliente><a:Nombre>Mauricio</a:Nombre><a:NumeroExt>114</a:NumeroExt><a:NumeroInt/><a:RFC>MURGM890215</a:RFC><a:RazonesDeRiesgo i:nil="true"/><a:TelefonoParticularUOficina>83580317</a:TelefonoParticularUOficina></a:ServicePLD.Persona></PersonaSelectResult></PersonaSelectResponse></s:Body></s:Envelope>
+<?xml version="1.0"?>
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Body>
+    <PersonaSelectResponse xmlns="http://tempuri.org/">
+      <PersonaSelectResult xmlns:a="http://schemas.datacontract.org/2004/07/WCF_PLD" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <a:ServicePLD.Persona_wcf>
+          <a:AMaterno>GARZA</a:AMaterno>
+          <a:APaterno>BARRERA</a:APaterno>
+          <a:CURP>BAGD851003HNLRRV04</a:CURP>
+          <a:Calle>LOS AGAVES</a:Calle>
+          <a:CodigoPostal>66230</a:CodigoPostal>
+          <a:Colonia>EL LUGAR DE LOS AGAVES</a:Colonia>
+          <a:CorreoElectronico>david.barrera@nebulafinanciera.com</a:CorreoElectronico>
+          <a:EstadoNacimiento>9</a:EstadoNacimiento>
+          <a:FechaDeIngreso>2018-06-26T12:00:00Z</a:FechaDeIngreso>
+          <a:FechaDeNacimientoOConstitucio>1985-10-03T12:00:00Z</a:FechaDeNacimientoOConstitucio>
+          <a:FirmaElectronicaAvanzada/>
+          <a:Genero>M</a:Genero>
+          <a:IdActividadEconomica>1129</a:IdActividadEconomica>
+          <a:IdEstado>9</a:IdEstado>
+          <a:IdGrupo>1</a:IdGrupo>
+          <a:IdLocalidad>1502</a:IdLocalidad>
+          <a:IdNacionalidad>2</a:IdNacionalidad>
+          <a:IdOcupacion>6</a:IdOcupacion>
+          <a:IdPais>1</a:IdPais>
+          <a:IdPaisDeNacimiento>1</a:IdPaisDeNacimiento>
+          <a:IdSucursalSocio>1</a:IdSucursalSocio>
+          <a:IdTipoPersona>1</a:IdTipoPersona>
+          <a:LogError i:nil="true"/>
+          <a:NoDeCliente>1</a:NoDeCliente>
+          <a:Nombre>DAVID RODOLFO</a:Nombre>
+          <a:NumeroExt>1200</a:NumeroExt>
+          <a:NumeroIdentificacionOficial>0410099198564</a:NumeroIdentificacionOficial>
+          <a:NumeroInt>12</a:NumeroInt>
+          <a:RFC>BAGD851003SA7</a:RFC>
+          <a:RolDePersona>Cliente</a:RolDePersona>
+          <a:TelefonoParticularUOficina>(81) 8280-4187</a:TelefonoParticularUOficina>
+          <a:TipoUsuario/>
+        </a:ServicePLD.Persona_wcf>
+      </PersonaSelectResult>
+    </PersonaSelectResponse>
+  </s:Body>
+</s:Envelope>
