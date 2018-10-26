@@ -28,6 +28,7 @@ destination_of_resources:
     description: 'Todo el crédito será para pagar uno o más adeudos pre existentes'
     code: '001'
   no_monitoring:
+    id: 2
     description: 'Todo o parte del crédito será para consumo general sin monitoreo'
     code: '002'
 origin_of_resources:
