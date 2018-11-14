@@ -30,9 +30,10 @@ module Siprelad
       wsdl: configuration.wsdl,
       open_timeout: configuration.open_timeout,
       read_timeout: configuration.read_timeout,
-      env_namespace: 'soap',
+      env_namespace: 'soapenv',
       namespaces: configuration.namespaces,
-      element_form_default: :qualified
+      element_form_default: :qualified,
+      namespace_identifier: :tem
     )
   end
 end

@@ -48,7 +48,7 @@ module Siprelad
     def initialize(options = {}); end
 
     def self.select_operation
-      :persona_select
+      :persona_select_sofom
     end
 
     def self.insert_operation
