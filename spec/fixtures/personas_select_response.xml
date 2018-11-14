@@ -1,20 +1,23 @@
 <?xml version="1.0"?>
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
   <s:Body>
-    <PersonaSelectResponse xmlns="http://tempuri.org/">
-      <PersonaSelectResult xmlns:a="http://schemas.datacontract.org/2004/07/WCF_PLD" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
-        <a:ServicePLD.Persona_wcf>
+    <PersonaSelect_SOFOMResponse xmlns="http://tempuri.org/">
+      <PersonaSelect_SOFOMResult xmlns:a="http://schemas.datacontract.org/2004/07/WCF_PLD.Clases" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <a:PersonaSOFOM>
           <a:AMaterno>CALDERON</a:AMaterno>
           <a:APaterno>RODRIGUEZ</a:APaterno>
+          <a:AntiguedadDomicilio>0</a:AntiguedadDomicilio>
+          <a:AntiguedadLaboral>0</a:AntiguedadLaboral>
           <a:CURP/>
           <a:Calle>SAS</a:Calle>
           <a:CodigoPostal>12132</a:CodigoPostal>
           <a:Colonia>SASA</a:Colonia>
           <a:CorreoElectronico/>
+          <a:EstadoCivil>0</a:EstadoCivil>
           <a:EstadoNacimiento>9</a:EstadoNacimiento>
           <a:FechaDeIngreso>2018-10-02T12:00:00Z</a:FechaDeIngreso>
           <a:FechaDeNacimientoOConstitucio>2018-02-06T12:00:00Z</a:FechaDeNacimientoOConstitucio>
-          <a:FirmaElectronicaAvanzada/>
+          <a:FirmaElectronica/>
           <a:Genero>M</a:Genero>
           <a:IdActividadEconomica>2</a:IdActividadEconomica>
           <a:IdEstado>1</a:IdEstado>
@@ -30,25 +33,31 @@
           <a:NoDeCliente>10001</a:NoDeCliente>
           <a:Nombre>JAIME</a:Nombre>
           <a:NumeroExt>11</a:NumeroExt>
-          <a:NumeroIdentificacionOficial/>
+          <a:NumeroIdOficial/>
           <a:NumeroInt/>
+          <a:PF_ConActividadEmpresarial>False</a:PF_ConActividadEmpresarial>
           <a:RFC/>
-          <a:RolDePersona>Cliente</a:RolDePersona>
+          <a:RecepcionPago>0</a:RecepcionPago>
           <a:TelefonoParticularUOficina/>
-          <a:TipoUsuario/>
-        </a:ServicePLD.Persona_wcf>
-        <a:ServicePLD.Persona_wcf>
+          <a:TipoCuentaBancaria>0</a:TipoCuentaBancaria>
+          <a:TipoDomicilio>0</a:TipoDomicilio>
+          <a:TipoUsoTerceros>0</a:TipoUsoTerceros>
+        </a:PersonaSOFOM>
+        <a:PersonaSOFOM>
           <a:AMaterno>CALDERON</a:AMaterno>
           <a:APaterno>RODRIGUEZ</a:APaterno>
+          <a:AntiguedadDomicilio>0</a:AntiguedadDomicilio>
+          <a:AntiguedadLaboral>0</a:AntiguedadLaboral>
           <a:CURP/>
           <a:Calle>SAS</a:Calle>
           <a:CodigoPostal>12132</a:CodigoPostal>
           <a:Colonia>SASA</a:Colonia>
           <a:CorreoElectronico/>
+          <a:EstadoCivil>0</a:EstadoCivil>
           <a:EstadoNacimiento>9</a:EstadoNacimiento>
           <a:FechaDeIngreso>2018-10-02T12:00:00Z</a:FechaDeIngreso>
           <a:FechaDeNacimientoOConstitucio>2018-02-06T12:00:00Z</a:FechaDeNacimientoOConstitucio>
-          <a:FirmaElectronicaAvanzada/>
+          <a:FirmaElectronica/>
           <a:Genero>M</a:Genero>
           <a:IdActividadEconomica>2</a:IdActividadEconomica>
           <a:IdEstado>1</a:IdEstado>
@@ -64,14 +73,17 @@
           <a:NoDeCliente>1000112</a:NoDeCliente>
           <a:Nombre>JAIME</a:Nombre>
           <a:NumeroExt>11</a:NumeroExt>
-          <a:NumeroIdentificacionOficial/>
+          <a:NumeroIdOficial/>
           <a:NumeroInt/>
+          <a:PF_ConActividadEmpresarial>False</a:PF_ConActividadEmpresarial>
           <a:RFC/>
-          <a:RolDePersona>Cliente</a:RolDePersona>
+          <a:RecepcionPago>0</a:RecepcionPago>
           <a:TelefonoParticularUOficina/>
-          <a:TipoUsuario/>
-        </a:ServicePLD.Persona_wcf>
-      </PersonaSelectResult>
-    </PersonaSelectResponse>
+          <a:TipoCuentaBancaria>0</a:TipoCuentaBancaria>
+          <a:TipoDomicilio>0</a:TipoDomicilio>
+          <a:TipoUsoTerceros>0</a:TipoUsoTerceros>
+        </a:PersonaSOFOM>
+      </PersonaSelect_SOFOMResult>
+    </PersonaSelect_SOFOMResponse>
   </s:Body>
 </s:Envelope>

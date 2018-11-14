@@ -1,20 +1,23 @@
 <?xml version="1.0"?>
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
   <s:Body>
-    <PersonaSelectResponse xmlns="http://tempuri.org/">
-      <PersonaSelectResult xmlns:a="http://schemas.datacontract.org/2004/07/WCF_PLD" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
-        <a:ServicePLD.Persona_wcf>
+    <PersonaSelect_SOFOMResponse xmlns="http://tempuri.org/">
+      <PersonaSelect_SOFOMResult xmlns:a="http://schemas.datacontract.org/2004/07/WCF_PLD.Clases" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <a:PersonaSOFOM>
           <a:AMaterno>GARZA</a:AMaterno>
           <a:APaterno>BARRERA</a:APaterno>
+          <a:AntiguedadDomicilio/>
+          <a:AntiguedadLaboral/>
           <a:CURP>BAGD851003HNLRRV04</a:CURP>
           <a:Calle>LOS AGAVES</a:Calle>
           <a:CodigoPostal>66230</a:CodigoPostal>
           <a:Colonia>EL LUGAR DE LOS AGAVES</a:Colonia>
           <a:CorreoElectronico>david.barrera@nebulafinanciera.com</a:CorreoElectronico>
+          <a:EstadoCivil/>
           <a:EstadoNacimiento>9</a:EstadoNacimiento>
           <a:FechaDeIngreso>2018-06-26T12:00:00Z</a:FechaDeIngreso>
           <a:FechaDeNacimientoOConstitucio>1985-10-03T12:00:00Z</a:FechaDeNacimientoOConstitucio>
-          <a:FirmaElectronicaAvanzada/>
+          <a:FirmaElectronica/>
           <a:Genero>M</a:Genero>
           <a:IdActividadEconomica>1129</a:IdActividadEconomica>
           <a:IdEstado>9</a:IdEstado>
@@ -30,14 +33,17 @@
           <a:NoDeCliente>1</a:NoDeCliente>
           <a:Nombre>DAVID RODOLFO</a:Nombre>
           <a:NumeroExt>1200</a:NumeroExt>
-          <a:NumeroIdentificacionOficial>0410099198564</a:NumeroIdentificacionOficial>
+          <a:NumeroIdOficial>0410099198564</a:NumeroIdOficial>
           <a:NumeroInt>12</a:NumeroInt>
+          <a:PF_ConActividadEmpresarial/>
           <a:RFC>BAGD851003SA7</a:RFC>
-          <a:RolDePersona>Cliente</a:RolDePersona>
+          <a:RecepcionPago/>
           <a:TelefonoParticularUOficina>(81) 8280-4187</a:TelefonoParticularUOficina>
-          <a:TipoUsuario/>
-        </a:ServicePLD.Persona_wcf>
-      </PersonaSelectResult>
-    </PersonaSelectResponse>
+          <a:TipoCuentaBancaria/>
+          <a:TipoDomicilio/>
+          <a:TipoUsoTerceros/>
+        </a:PersonaSOFOM>
+      </PersonaSelect_SOFOMResult>
+    </PersonaSelect_SOFOMResponse>
   </s:Body>
 </s:Envelope>

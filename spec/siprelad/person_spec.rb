@@ -31,7 +31,7 @@ RSpec.describe Siprelad::Person do
 
   it 'gets a person by id' do
     allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(persona_select_id_response)
-    response_objects = Siprelad::Person.select_id('IdPersona' => 1)
+    response_objects = Siprelad::Person.select_id('NoDeCliente' => 1)
     expect(response_objects).to be_a(Array)
     expect(response_objects.size).to eq(1)
     person = response_objects.first
