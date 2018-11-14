@@ -57,12 +57,24 @@ module Siprelad
 
     def initialize(options = {}); end
 
+    def self.where(params = {})
+      given_names = params.fetch(:given_names, nil)
+      paternal_surname = params.fetch(:paternal_surname, nil)
+      mothers_maiden_name = params.fetch(:mothers_maiden_name, nil)
+      raise 'Given names or surnames must be given!' if (given_names.to_s + paternal_surname.to_s + mothers_maiden_name.to_s).blank?
+      select('Nombre' => given_names, 'APaterno' => paternal_surname, 'AMaterno' => mothers_maiden_name)
+    end
+
+    def self.find(id)
+      select_id('NoDeCliente' => id)
+    end
+
     def self.select_operation
       :persona_select_sofom
     end
 
     def self.insert_operation
-      :persona_insert
+      :persona_insert_sofom
     end
 
     def self.select_id_operation

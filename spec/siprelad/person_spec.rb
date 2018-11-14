@@ -11,7 +11,7 @@ RSpec.describe Siprelad::Person do
 
   it 'gets a single person' do
     allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(persona_select_response)
-    response_objects = Siprelad::Person.select('Nombre' => 'David')
+    response_objects = Siprelad::Person.where(given_names: 'David')
     expect(response_objects).to be_a(Array)
     expect(response_objects.size).to eq(1)
     person = response_objects.first
@@ -21,7 +21,7 @@ RSpec.describe Siprelad::Person do
 
   it 'gets multiple persons' do
     allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(personas_select_response)
-    response_objects = Siprelad::Person.select('Nombre' => 'JAIME')
+    response_objects = Siprelad::Person.where(given_names: 'JAIME')
     person = response_objects.first
     expect(response_objects).to be_a(Array)
     expect(response_objects.size).to eq(2)
@@ -31,7 +31,7 @@ RSpec.describe Siprelad::Person do
 
   it 'gets a person by id' do
     allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(persona_select_id_response)
-    response_objects = Siprelad::Person.select_id('NoDeCliente' => 1)
+    response_objects = Siprelad::Person.find(1)
     expect(response_objects).to be_a(Array)
     expect(response_objects.size).to eq(1)
     person = response_objects.first
