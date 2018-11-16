@@ -1,12 +1,14 @@
 RSpec.describe Siprelad::Contract do
-  before do
-    Siprelad.configure do |config|
-      config.user = 'Administrador'
-      config.password = 'lwi6Fk@7'
-    end
-  end
+  let(:configuration) { YAML.load_file(file_fixture("configuration.yml")) }
   let(:contrato_select_sofom_response) { response_to_hash(file_fixture('contrato_select_sofom_response.xml').read) }
   let(:contrato_insert_sofom_response) { response_to_hash(file_fixture('contrato_insert_sofom_response.xml').read) }
+
+  before do
+    Siprelad.configure do |config|
+      config.user = configuration['user']
+      config.password = configuration['password']
+    end
+  end
 
   it 'gets a contract by id' do
     allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(contrato_select_sofom_response)

@@ -7,7 +7,8 @@ module Siprelad
       @open_timeout = 5
       @read_timeout = 5
       @environment = ENV['RAILS_ENV']
-      @wsdl = 'https://pld.gonebula.io/WCF_PLD/ServicePLD.svc?singleWsdl'
+      @wsdl = (production? ? 'http://internal-elb-shared-priv-pld-1296134306.us-east-1.elb.amazonaws.com/WCF_PLD/ServicePLD.svc?singleWsdl' :
+                             'https://pld.gonebula.io/WCF_PLD/ServicePLD.svc?singleWsdl')
     end
 
     def namespaces

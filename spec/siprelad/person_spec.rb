@@ -1,14 +1,16 @@
 RSpec.describe Siprelad::Person do
-  before do
-    Siprelad.configure do |config|
-      config.user = 'Administrador'
-      config.password = 'lwi6Fk@7'
-    end
-  end
+  let(:configuration) { YAML.load_file(file_fixture("configuration.yml")) }
   let(:persona_select_sofom_response) { response_to_hash(file_fixture('persona_select_sofom_response.xml').read) }
   let(:personas_select_sofom_response) { response_to_hash(file_fixture('personas_select_sofom_response.xml').read) }
   let(:persona_select_sofom_id_response) { response_to_hash(file_fixture('persona_select_sofom_id_response.xml').read) }
   let(:persona_insert_sofom_error_response) { response_to_hash(file_fixture('persona_insert_sofom_error_response.xml').read) }
+
+  before do
+    Siprelad.configure do |config|
+      config.user = configuration['user']
+      config.password = configuration['password']
+    end
+  end
 
   it 'gets a single person' do
     allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(persona_select_sofom_response)

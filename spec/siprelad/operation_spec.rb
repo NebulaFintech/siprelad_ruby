@@ -1,12 +1,13 @@
 RSpec.describe Siprelad::Operation do
+  let(:configuration) { YAML.load_file(file_fixture("configuration.yml")) }
+  let(:operacion_insert_sofom_error_response) { response_to_hash(file_fixture('operacion_insert_sofom_error_response.xml').read) }
+
   before do
     Siprelad.configure do |config|
-      config.user = 'Administrador'
-      config.password = 'lwi6Fk@7'
+      config.user = configuration['user']
+      config.password = configuration['password']
     end
   end
-
-  let(:operacion_insert_sofom_error_response) { response_to_hash(file_fixture('operacion_insert_sofom_error_response.xml').read) }
 
   it 'creates an operation' do
     allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(operacion_insert_sofom_error_response)

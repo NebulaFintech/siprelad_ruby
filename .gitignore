@@ -6,7 +6,10 @@
 /pkg/
 /spec/reports/
 /tmp/
+/spec/fixtures/configuration-prod.yml
 
 # rspec failure tracking
 .rspec_status
 .DS_Store
+.ruby-gemset
+.ruby-version
