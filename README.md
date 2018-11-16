@@ -21,7 +21,7 @@ Siprelad.configure do |config|
   config.user = "myuser"
   config.password = "mypassword"
 end
-person = Siprelad::Person.select({"Nombre" => "Mauricio"})
+person = Siprelad::Person.where(given_names: 'JAIME').first
 ```
 
 ## Development
