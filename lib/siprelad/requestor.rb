@@ -5,7 +5,7 @@ module Siprelad
       @user = Siprelad.configuration.user
       @password = Siprelad.configuration.password
       @connection = Siprelad.configuration.connection
-      raise 'User has not been set!' if @user.blank?
+      raise 'user has not been set!' if @user.blank?
       raise 'password has not been set!' if @password.blank?
     end
 
