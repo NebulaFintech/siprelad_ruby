@@ -1,5 +1,5 @@
 RSpec.describe Siprelad::Operation do
-  let(:configuration) { YAML.load_file(file_fixture("configuration.yml")) }
+  let(:configuration) { YAML.load_file(file_fixture('configuration.yml')) }
   let(:operacion_insert_sofom_error_response) { response_to_hash(file_fixture('operacion_insert_sofom_error_response.xml').read) }
 
   before do
@@ -11,7 +11,7 @@ RSpec.describe Siprelad::Operation do
 
   it 'creates an operation' do
     allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(operacion_insert_sofom_error_response)
-    expect{ 
+    expect do
       Siprelad::Operation.create(
         id: 1,
         customer_id: 1,
@@ -21,6 +21,7 @@ RSpec.describe Siprelad::Operation do
         operation_amount: 780,
         currency: :mxn,
         loan_balance: 9_220
-      )}.to raise_error(RuntimeError, ' /NoDeCliente(Persona) es requerido /IdAuxiliar(Contrato) no existe para el NoDeCliente(Persona) /IdOrigenOperacion es requerido')
+      )
+    end .to raise_error(RuntimeError, ' /NoDeCliente(Persona) es requerido /IdAuxiliar(Contrato) no existe para el NoDeCliente(Persona) /IdOrigenOperacion es requerido')
   end
 end

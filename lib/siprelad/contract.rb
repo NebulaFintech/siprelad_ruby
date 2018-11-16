@@ -3,9 +3,9 @@ module Siprelad
     include Mixins::Select
     include Mixins::Insert
     ATTRIBUTES = %i[destino_recursos fecha_originacion fecha_vencimiento
-      frecuencia_pago id_auxiliar id_grupo id_origen id_origenp id_producto
-      importe_mensualidad moneda_credito monto_credito no_de_cliente
-      origen_recursos plazo sueldo_mensual tipo_instrumento] .freeze
+                    frecuencia_pago id_auxiliar id_grupo id_origen id_origenp id_producto
+                    importe_mensualidad moneda_credito monto_credito no_de_cliente
+                    origen_recursos plazo sueldo_mensual tipo_instrumento] .freeze
 
     attr_reader(*ATTRIBUTES)
     # insert and update param
@@ -26,7 +26,6 @@ module Siprelad
     # @Plazo
     # @Sueldo_mensual
     # @Tipo_instrumento
-
 
     def initialize(options = {}); end
 
@@ -52,7 +51,7 @@ module Siprelad
         'Monto_credito' => params.fetch(:principal),
         'OrigenRecursos' => '002',
         'DestinoRecursos' => '002',
-        'FrecuenciaPago' => '02',
+        'FrecuenciaPago' => '02'
       )
     end
 

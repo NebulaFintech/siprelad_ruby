@@ -1,5 +1,5 @@
 RSpec.describe Siprelad::Person do
-  let(:configuration) { YAML.load_file(file_fixture("configuration.yml")) }
+  let(:configuration) { YAML.load_file(file_fixture('configuration.yml')) }
   let(:persona_select_sofom_response) { response_to_hash(file_fixture('persona_select_sofom_response.xml').read) }
   let(:personas_select_sofom_response) { response_to_hash(file_fixture('personas_select_sofom_response.xml').read) }
   let(:persona_select_sofom_id_response) { response_to_hash(file_fixture('persona_select_sofom_id_response.xml').read) }
@@ -44,7 +44,7 @@ RSpec.describe Siprelad::Person do
 
   it 'inserts a person and fails' do
     allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(persona_insert_sofom_error_response)
-    expect{
+    expect do
       Siprelad::Person.create(
         id: 1,
         given_names: 'Mauricio Fernando',
@@ -70,6 +70,8 @@ RSpec.describe Siprelad::Person do
         email: 'mauricio.murga@gonebula.io',
         civil_status: :married,
         housing_type: :owned,
-        lived_in_since: Date.parse('15-02-1989'))}.to raise_error(RuntimeError, ' / APaterno es requerido')
+        lived_in_since: Date.parse('15-02-1989')
+      )
+    end .to raise_error(RuntimeError, ' / APaterno es requerido')
   end
 end

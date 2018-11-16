@@ -1,5 +1,5 @@
 RSpec.describe Siprelad::Contract do
-  let(:configuration) { YAML.load_file(file_fixture("configuration.yml")) }
+  let(:configuration) { YAML.load_file(file_fixture('configuration.yml')) }
   let(:contrato_select_sofom_response) { response_to_hash(file_fixture('contrato_select_sofom_response.xml').read) }
   let(:contrato_insert_sofom_response) { response_to_hash(file_fixture('contrato_insert_sofom_response.xml').read) }
 
@@ -20,7 +20,7 @@ RSpec.describe Siprelad::Contract do
 
   it 'creates a contract' do
     allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(contrato_insert_sofom_response)
-    expect{ 
+    expect do
       Siprelad::Contract.create(
         id: 1,
         customer_id: 1,
@@ -32,6 +32,7 @@ RSpec.describe Siprelad::Contract do
         currency: :mxn,
         principal: 10_000,
         loan_product_id: 1
-      )}.to_not raise_error
+      )
+    end .to_not raise_error
   end
 end

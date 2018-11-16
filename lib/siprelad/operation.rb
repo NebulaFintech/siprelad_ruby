@@ -2,9 +2,9 @@ module Siprelad
   class Operation < Resource
     include Mixins::Insert
     ATTRIBUTES = %i[id_operacion id_origen id_grupo no_de_cliente
-      id_origenp id_producto id_auxiliar fecha efectivo otros
-      total_operacion tipo_operacion moneda saldo_credito
-      id_origen_operacion].freeze
+                    id_origenp id_producto id_auxiliar fecha efectivo otros
+                    total_operacion tipo_operacion moneda saldo_credito
+                    id_origen_operacion].freeze
 
     attr_reader(*ATTRIBUTES)
     # insert and update param

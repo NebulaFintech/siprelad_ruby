@@ -7,6 +7,7 @@ module Siprelad
           response = requestor.request(select_operation, params)
           parse_response(response, select_operation)
         end
+
         def select_id(params = {})
           requestor = Requestor.new
           response = requestor.request(select_id_operation, params)

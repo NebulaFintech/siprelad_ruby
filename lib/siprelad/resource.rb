@@ -12,7 +12,7 @@ module Siprelad
       else
         response_objects << parse_response_object(response_body)
       end
-      return response_objects
+      response_objects
     end
 
     private
@@ -32,18 +32,17 @@ module Siprelad
     def self.set_instance_variables(object, field)
       k = field.first
       v = field.last
-      check_for_errors(k,v)
+      check_for_errors(k, v)
       object.instance_variable_set(:"@#{k}", v) if self::ATTRIBUTES.include?(k.to_sym)
     end
 
-    def self.check_for_errors(k,v)
-      if k == :log_error && v.to_s.match("/") && !v.match("insertado")
-        raise v
-      end
+    def self.check_for_errors(k, v)
+      raise v if k == :log_error && v.to_s.match('/') && !v.match('insertado')
     end
 
     def self.parse_date(date)
       return date if date.blank?
+
       date.strftime('%d/%m/%Y')
     end
 
@@ -93,6 +92,7 @@ module Siprelad
 
     def self.years_since(date)
       return date if date.blank?
+
       (Date.current - date.to_date).to_i / 365
     end
   end

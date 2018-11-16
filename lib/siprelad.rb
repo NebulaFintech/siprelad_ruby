@@ -13,7 +13,7 @@ module Siprelad
   require 'active_support'
   require 'active_support/core_ext'
 
-  CATALOGUE = YAML.safe_load(File.read(File.join(File.dirname(__FILE__),'catalogue.yml')))
+  CATALOGUE = YAML.safe_load(File.read(File.join(File.dirname(__FILE__), 'catalogue.yml')))
 
   def self.configure
     yield(configuration)
