@@ -5,23 +5,24 @@ RSpec.describe Siprelad::Person do
       config.password = 'lwi6Fk@7'
     end
   end
-  let(:persona_select_response) { response_to_hash(file_fixture('persona_select_response.xml').read) }
-  let(:personas_select_response) { response_to_hash(file_fixture('personas_select_response.xml').read) }
-  let(:persona_select_id_response) { response_to_hash(file_fixture('persona_select_id_response.xml').read) }
-  let(:persona_insert_error_response) { response_to_hash(file_fixture('persona_insert_error_response.xml').read) }
+  let(:persona_select_sofom_response) { response_to_hash(file_fixture('persona_select_sofom_response.xml').read) }
+  let(:personas_select_sofom_response) { response_to_hash(file_fixture('personas_select_sofom_response.xml').read) }
+  let(:persona_select_sofom_id_response) { response_to_hash(file_fixture('persona_select_sofom_id_response.xml').read) }
+  let(:persona_insert_sofom_error_response) { response_to_hash(file_fixture('persona_insert_sofom_error_response.xml').read) }
 
   it 'gets a single person' do
-    allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(persona_select_response)
+    allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(persona_select_sofom_response)
     response_objects = Siprelad::Person.where(given_names: 'David')
     expect(response_objects).to be_a(Array)
     expect(response_objects.size).to eq(1)
     person = response_objects.first
     expect(person).to be_a(Siprelad::Person)
     expect(person.rfc).to eq('BAGD851003SA7')
+    expect(person.id).to eq(1)
   end
 
   it 'gets multiple persons' do
-    allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(personas_select_response)
+    allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(personas_select_sofom_response)
     response_objects = Siprelad::Person.where(given_names: 'JAIME')
     person = response_objects.first
     expect(response_objects).to be_a(Array)
@@ -31,15 +32,16 @@ RSpec.describe Siprelad::Person do
   end
 
   it 'gets a person by id' do
-    allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(persona_select_id_response)
+    allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(persona_select_sofom_id_response)
     response_object = Siprelad::Person.find(1)
     expect(response_object).to be_a(Siprelad::Person)
     person = response_object
     expect(person.rfc).to eq('BAGD851003SA7')
+    expect(person.id).to eq(1)
   end
 
   it 'inserts a person and fails' do
-    allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(persona_insert_error_response)
+    allow_any_instance_of(Siprelad::Requestor).to receive(:request).and_return(persona_insert_sofom_error_response)
     expect{
       Siprelad::Person.create(
         id: 1,

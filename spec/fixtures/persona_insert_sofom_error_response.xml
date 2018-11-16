@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Body>
+    <PersonaInsert_SOFOMResponse xmlns="http://tempuri.org/">
+      <PersonaInsert_SOFOMResult xmlns:a="http://schemas.datacontract.org/2004/07/WCF_PLD.Clases" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <a:PersonaSOFOM>
+          <a:AMaterno i:nil="true"/>
+          <a:APaterno i:nil="true"/>
+          <a:AntiguedadDomicilio i:nil="true"/>
+          <a:AntiguedadLaboral i:nil="true"/>
+          <a:CURP i:nil="true"/>
+          <a:Calle i:nil="true"/>
+          <a:CodigoPostal i:nil="true"/>
+          <a:Colonia i:nil="true"/>
+          <a:CorreoElectronico i:nil="true"/>
+          <a:EstadoCivil i:nil="true"/>
+          <a:EstadoNacimiento i:nil="true"/>
+          <a:FechaDeIngreso i:nil="true"/>
+          <a:FechaDeNacimientoOConstitucio i:nil="true"/>
+          <a:FirmaElectronica i:nil="true"/>
+          <a:Genero i:nil="true"/>
+          <a:IdActividadEconomica i:nil="true"/>
+          <a:IdEstado i:nil="true"/>
+          <a:IdGrupo i:nil="true"/>
+          <a:IdLocalidad i:nil="true"/>
+          <a:IdNacionalidad i:nil="true"/>
+          <a:IdOcupacion i:nil="true"/>
+          <a:IdPais i:nil="true"/>
+          <a:IdPaisDeNacimiento i:nil="true"/>
+          <a:IdSucursalSocio i:nil="true"/>
+          <a:IdTipoPersona i:nil="true"/>
+          <a:LogError> / APaterno es requerido</a:LogError>
+          <a:NoDeCliente i:nil="true"/>
+          <a:Nombre i:nil="true"/>
+          <a:NumeroExt i:nil="true"/>
+          <a:NumeroIdOficial i:nil="true"/>
+          <a:NumeroInt i:nil="true"/>
+          <a:PF_ConActividadEmpresarial i:nil="true"/>
+          <a:RFC i:nil="true"/>
+          <a:RecepcionPago i:nil="true"/>
+          <a:TelefonoParticularUOficina i:nil="true"/>
+          <a:TipoCuentaBancaria i:nil="true"/>
+          <a:TipoDomicilio i:nil="true"/>
+          <a:TipoUsoTerceros i:nil="true"/>
+        </a:PersonaSOFOM>
+      </PersonaInsert_SOFOMResult>
+    </PersonaInsert_SOFOMResponse>
+  </s:Body>
+</s:Envelope>

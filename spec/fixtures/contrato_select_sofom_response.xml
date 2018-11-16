@@ -1,0 +1,30 @@
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+ <s:Header />
+ <s:Body>
+   <ContratoSelect_SOFOMResponse xmlns="http://tempuri.org/">
+     <ContratoSelect_SOFOMResult xmlns:a="http://schemas.datacontract.org/2004/07/WCF_PLD.Clases"
+      xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+       <a:ContratoSOFOM>
+         <a:DestinoRecursos>1</a:DestinoRecursos>
+         <a:Fecha_originacion>2015-01-01T12:00:00Z</a:Fecha_originacion>
+         <a:Fecha_vencimiento>2019-01-01T12:00:00Z</a:Fecha_vencimiento>
+         <a:FrecuenciaPago>2</a:FrecuenciaPago>
+         <a:IdAuxiliar>600</a:IdAuxiliar>
+         <a:IdGrupo />
+         <a:IdOrigen />
+         <a:IdOrigenp>1</a:IdOrigenp>
+         <a:IdProducto>1</a:IdProducto>
+         <a:Importe_mensualidad>30.0000</a:Importe_mensualidad>
+         <a:LogError i:nil="true" />
+         <a:Moneda_credito>1</a:Moneda_credito>
+         <a:Monto_credito>10000.0000</a:Monto_credito>
+         <a:NoDeCliente>640</a:NoDeCliente>
+         <a:OrigenRecursos>3</a:OrigenRecursos>
+         <a:Plazo>8</a:Plazo>
+         <a:Sueldo_mensual>1500.0000</a:Sueldo_mensual>
+         <a:Tipo_instrumento>2</a:Tipo_instrumento>
+       </a:ContratoSOFOM>
+     </ContratoSelect_SOFOMResult>
+   </ContratoSelect_SOFOMResponse>
+ </s:Body>
+</s:Envelope>

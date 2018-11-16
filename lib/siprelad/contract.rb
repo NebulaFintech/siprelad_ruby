@@ -2,36 +2,44 @@ module Siprelad
   class Contract < Resource
     include Mixins::Select
     include Mixins::Insert
-    ATTRIBUTES = %i[id_origen id_grupo id_socio
-                    id_origenp id_producto id_auxiliar tipo_instrumento
-                    fecha_originacion fecha_vencimiento sueldo_mensual
-                    plazo importe_mensualidad moneda_credito monto_credito
-                    origen_recursos destino_recursos frecuencia_pago].freeze
+    ATTRIBUTES = %i[destino_recursos fecha_originacion fecha_vencimiento
+      frecuencia_pago id_auxiliar id_grupo id_origen id_origenp id_producto
+      importe_mensualidad moneda_credito monto_credito no_de_cliente
+      origen_recursos plazo sueldo_mensual tipo_instrumento] .freeze
 
     attr_reader(*ATTRIBUTES)
     # insert and update param
-    # @IdOrigen
-    # @IdGrupo
-    # @IdSocio
-    # @IdOrigenp
-    # @IdProducto
-    # @IdAuxiliar
-    # @Tipo_instrumento
+    # @DestinoRecursos
     # @Fecha_originacion
     # @Fecha_vencimiento
-    # @Sueldo_mensual
-    # @plazo
+    # @FrecuenciaPago
+    # @IdAuxiliar
+    # @IdGrupo
+    # @IdOrigen
+    # @IdOrigenp
+    # @IdProducto
     # @Importe_mensualidad
     # @Moneda_credito
     # @Monto_credito
+    # @NoDeCliente
     # @OrigenRecursos
-    # @DestinoRecursos
-    # @FrecuenciaPago
+    # @Plazo
+    # @Sueldo_mensual
+    # @Tipo_instrumento
+
 
     def initialize(options = {}); end
 
+    def self.find(id)
+      select('IdAuxiliar' => id).first
+    end
+
+    def id
+      id_auxiliar.to_i
+    end
+
     def self.select_operation
-      :contrato_select
+      :contrato_select_sofom
     end
 
     def self.insert_operation

@@ -111,6 +111,10 @@ module Siprelad
       }).first
     end
 
+    def id
+      no_de_cliente.to_i
+    end
+
     def self.select_id_operation
       :persona_select_id_sofom
     end
