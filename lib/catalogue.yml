@@ -1,8 +1,10 @@
+nationalities:
+  unknown: 0
+  mexican: 1
+  foreign: 2
 currencies:
-  mxn:
-    id: 1
-  usd:
-    id: 2
+  mxn: 'MXN'
+  usd: 'USD'
 payment_methods:
   cash:
     id: '01'
