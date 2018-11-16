@@ -57,17 +57,17 @@ RSpec.describe Siprelad::Person do
         municipality_pld_id: '02340009',
         state_pld_id: '9',
         postal_code: '64700',
-        country: 'MX',
+        country: :mx,
         mobile_phone: '8186567150',
         starting_working_date: Date.parse('15-08-2017'),
         economic_activity_code: '8200008',
         gender: 'male',
-        country_of_birth: 'MX',
+        country_of_birth: :mx,
         fea_reference_id: '1234567890',
         province_of_birth_pld_id: '9',
         email: 'mauricio.murga@gonebula.io',
-        civil_status: 'married',
-        housing_type: 'owned',
+        civil_status: :married,
+        housing_type: :owned,
         lived_in_since: Date.parse('15-02-1989'))}.to raise_error(RuntimeError, ' / APaterno es requerido')
   end
 end

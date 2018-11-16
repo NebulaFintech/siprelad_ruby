@@ -37,7 +37,7 @@ module Siprelad
     end
 
     def self.check_for_errors(k,v)
-      if k == :log_error && v.to_s.match("/")
+      if k == :log_error && v.to_s.match("/") && !v.match("insertado")
         raise v
       end
     end

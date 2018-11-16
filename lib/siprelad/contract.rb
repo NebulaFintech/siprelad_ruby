@@ -34,6 +34,28 @@ module Siprelad
       select('IdAuxiliar' => id).first
     end
 
+    def self.create(params = {})
+      insert({
+        'IdOrigen' => 0,
+        'IdGrupo' => 0,
+        'NoDeCliente' => params.fetch(:customer_id),
+        'IdOrigenp' => 0,
+        'IdProducto' => 0,
+        'IdAuxiliar' => params.fetch(:id),
+        'Tipo_instrumento' => '03',
+        'Fecha_originacion' => parse_date(params.fetch(:expected_disbursement_at)),
+        'Fecha_vencimiento' => parse_date(params.fetch(:liquidation_date)),
+        'Sueldo_mensual' => params.fetch(:monthly_income).to_f,
+        'Plazo' => params.fetch(:months_duration),
+        'Importe_mensualidad' => params.fetch(:monthly_repayment),
+        'Moneda_credito' => params.fetch(:currency),
+        'Monto_credito' => params.fetch(:principal),
+        'OrigenRecursos' => '002',
+        'DestinoRecursos' => '002',
+        'FrecuenciaPago' => '02',
+      })
+    end
+
     def id
       id_auxiliar.to_i
     end
@@ -43,7 +65,7 @@ module Siprelad
     end
 
     def self.insert_operation
-      :contrato_insert
+      :contrato_insert_sofom
     end
 
     def self.select_id_operation
