@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Body>
+    <ContratoInsert_SOFOMResponse xmlns="http://tempuri.org/">
+      <ContratoInsert_SOFOMResult xmlns:a="http://schemas.datacontract.org/2004/07/WCF_PLD.Clases" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <a:ContratoSOFOM>
+          <a:DestinoRecursos i:nil="true"/>
+          <a:Fecha_originacion i:nil="true"/>
+          <a:Fecha_vencimiento i:nil="true"/>
+          <a:FrecuenciaPago i:nil="true"/>
+          <a:IdAuxiliar i:nil="true"/>
+          <a:IdGrupo i:nil="true"/>
+          <a:IdOrigen i:nil="true"/>
+          <a:IdOrigenp i:nil="true"/>
+          <a:IdProducto i:nil="true"/>
+          <a:Importe_mensualidad i:nil="true"/>
+          <a:LogError>Contrato insertado con exito: 1 16/11/2018 10:33:55 p. m.</a:LogError>
+          <a:Moneda_credito i:nil="true"/>
+          <a:Monto_credito i:nil="true"/>
+          <a:NoDeCliente i:nil="true"/>
+          <a:OrigenRecursos i:nil="true"/>
+          <a:Plazo i:nil="true"/>
+          <a:Sueldo_mensual i:nil="true"/>
+          <a:Tipo_instrumento i:nil="true"/>
+        </a:ContratoSOFOM>
+      </ContratoInsert_SOFOMResult>
+    </ContratoInsert_SOFOMResponse>
+  </s:Body>
+</s:Envelope>

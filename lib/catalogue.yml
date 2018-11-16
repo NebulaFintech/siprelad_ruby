@@ -1,0 +1,641 @@
+nationalities:
+  unknown: 0
+  mexican: 1
+  foreign: 2
+currencies:
+  mxn: 'MXN'
+  usd: 'USD'
+payment_methods:
+  cash:
+    id: '01'
+  transfer:
+    id: '03'
+  traveler_cheque:
+    id: '04'
+  gold:
+    id: '05'
+  silver:
+    id: '06'
+  rights:
+    id: '08'
+  cheque:
+    id: '10'
+  goods:
+    id: '11'
+  cash_check:
+    id: '12'
+destination_of_resources:
+  debts:
+    id: 1
+    description: 'Todo el crédito será para pagar uno o más adeudos pre existentes'
+    code: '001'
+  no_monitoring:
+    id: 2
+    description: 'Todo o parte del crédito será para consumo general sin monitoreo'
+    code: '002'
+origin_of_resources:
+  payroll_discount:
+    id: 1
+    description: 'Contrato contempla descuentos de la nómina del cliente'
+    code: '001'
+  direct_debit:
+    id: 2
+    description: 'No descuento de nómina, pero sí domciliación'
+    code: '002'
+  others:
+    id: 3
+    description: 'Cualquier otro caso'
+    code: '003'
+states:
+  AS:
+    name: AGUASCALIENTES
+    id: 216
+  BC:
+    name: BAJA CALIFORNIA
+    id: 217
+  BS:
+    name: BAJA CALIFORNIA SUR
+    id: 218
+  CC:
+    name: CAMPECHE
+    id: 219
+  CS:
+    name: CHIAPAS
+    id: 2
+  CH:
+    name: CHIHUAHUA
+    id: 3
+  CL:
+    name: COAHUILA
+    id: 1
+  CM:
+    name: COLIMA
+    id: 213
+  DF:
+    name: DISTRITO FEDERAL
+    id: 214
+  DG:
+    name: DURANGO
+    id: 215
+  MC:
+    name: ESTADO DE MEXICO
+    id: 205
+  GT:
+    name: GUANAJUATO
+    id: 4
+  GR:
+    name: GUERRERO
+    id: 220
+  HG:
+    name: HIDALGO
+    id: 5
+  JC:
+    name: JALISCO
+    id: 6
+  MN:
+    name: MICHOACAN
+    id: 8
+  MS:
+    name: MORELOS
+    id: 206
+  NT:
+    name: NAYARIT
+    id: 207
+  NL:
+    name: NUEVO LEON
+    id: 9
+  OC:
+    name: OAXACA
+    id: 10
+  PL:
+    name: PUEBLA
+    id: 11
+  QT:
+    name: QUERETARO
+    id: 208
+  QR:
+    name: QUINTANA ROO
+    id: 209
+  SP:
+    name: SAN LUIS POTOSI
+    id: 12
+  SL:
+    name: SINALOA
+    id: 210
+  SR:
+    name: SONORA
+    id: 13
+  TC:
+    name: TABASCO
+    id: 211
+  TS:
+    name: TAMAULIPAS
+    id: 14
+  TL:
+    name: TLAXCALA
+    id: 212
+  VZ:
+    name: VERACRUZ
+    id: 15
+  YN:
+    name: YUCATAN
+    id: 16
+  ZS:
+    name: ZACATECAS
+    id: 17
+  NE:
+    name: NINGUNO
+    id: 204
+countries:
+  MX:
+    name: MEXICO
+    id: 1
+  US:
+    name: EUA
+    id: 2
+  CA:
+    name: CANADA
+    id: 3
+  AF:
+    name: AFGANISTAN
+    id: 4
+  AL:
+    name: ALBANIA
+    id: 5
+  DE:
+    name: ALEMANIA
+    id: 6
+  AD:
+    name: ANDORRA
+    id: 7
+  AO:
+    name: ANGOLA
+    id: 8
+  SA:
+    name: ARABIA
+    id: 10
+  DZ:
+    name: ARGELIA
+    id: 11
+  AR:
+    name: ARGENTINA
+    id: 12
+  AM:
+    name: ARMENIA
+    id: 13
+  AU:
+    name: AUSTRALIA
+    id: 15
+  AT:
+    name: AUSTRIA
+    id: 16
+  AZ:
+    name: AZERBAIYAN
+    id: 17
+  BS:
+    name: BAHAMAS
+    id: 18
+  BH:
+    name: BAHREIN
+    id: 19
+  BD:
+    name: BANGLADESH
+    id: 20
+  BE:
+    name: BELGICA
+    id: 22
+  BJ:
+    name: BENIN
+    id: 24
+  BY:
+    name: BIELORRUSIA
+    id: 26
+  MM:
+    name: BIRMANIA
+    id: 27
+  BO:
+    name: BOLIVIA
+    id: 28
+  BA:
+    name: BOSNIA-HERZEGOVINA
+    id: 30
+  BW:
+    name: BOTSWANA
+    id: 31
+  BR:
+    name: BRASIL
+    id: 32
+  BG:
+    name: BULGARIA
+    id: 34
+  BF:
+    name: BURKINA FASO
+    id: 35
+  BI:
+    name: BURUNDI
+    id: 36
+  BT:
+    name: BUTAN
+    id: 37
+  KH:
+    name: CAMBOYA
+    id: 38
+  CM:
+    name: CAMERUN
+    id: 39
+  TD:
+    name: CHAD
+    id: 43
+  CL:
+    name: CHILE
+    id: 44
+  CN:
+    name: CHINA
+    id: 45
+  CO:
+    name: COLOMBIA
+    id: 46
+  KP:
+    name: COREA DEL NORTE
+    id: 49
+  KR:
+    name: COREA DEL SUR
+    id: 50
+  CI:
+    name: COSTA DE MARFIL
+    id: 51
+  CR:
+    name: COSTA RICA
+    id: 52
+  HR:
+    name: CROACIA
+    id: 53
+  CU:
+    name: CUBA
+    id: 54
+  CW:
+    name: CURAZAO
+    id: 55
+  DK:
+    name: DINAMARCA
+    id: 56
+  EC:
+    name: ECUADOR
+    id: 57
+  EG:
+    name: EGIPTO
+    id: 58
+  SV:
+    name: EL SALVADOR
+    id: 59
+  SK:
+    name: ESLOVAQUIA
+    id: 61
+  SI:
+    name: ESLOVENIA
+    id: 62
+  ES:
+    name: ESPAÑA
+    id: 63
+  EE:
+    name: ESTONIA
+    id: 64
+  ET:
+    name: ETIOPIA
+    id: 65
+  PH:
+    name: FILIPINAS
+    id: 68
+  FI:
+    name: FINLANDIA
+    id: 69
+  FR:
+    name: FRANCIA
+    id: 70
+  GA:
+    name: GABON
+    id: 72
+  GM:
+    name: GAMBIA
+    id: 73
+  GE:
+    name: GEORGIA
+    id: 74
+  GH:
+    name: GHANA
+    id: 75
+  GR:
+    name: GRECIA
+    id: 77
+  GT:
+    name: GUATEMALA
+    id: 78
+  GF:
+    name: GUAYANA FRANCESA
+    id: 80
+  GF:
+    name: GUAYANA HOLANDESA
+    id: 81
+  GN:
+    name: GUINEA
+    id: 83
+  GQ:
+    name: GUINEA ECUATORIAL
+    id: 84
+  GW:
+    name: GUINEABISSAU
+    id: 85
+  HT:
+    name: HAITI
+    id: 86
+  NL:
+    name: HOLANDA
+    id: 87
+  HN:
+    name: HONDURAS
+    id: 88
+  HN:
+    name: HONDURAS BRITANICAS
+    id: 89
+  HU:
+    name: HUNGRIA
+    id: 91
+  IN:
+    name: INDIA
+    id: 92
+  ID:
+    name: INDONESIA
+    id: 93
+  nil:
+    name: INGLATERRA
+    id: 94
+  IQ:
+    name: IRAK
+    id: 97
+  IR:
+    name: IRAN
+    id: 98
+  IE:
+    name: IRLANDA
+    id: 99
+  IS:
+    name: ISLANDIA
+    id: 100
+  IL:
+    name: ISRAEL
+    id: 104
+  IT:
+    name: ITALIA
+    id: 105
+  JM:
+    name: JAMAICA
+    id: 106
+  JP:
+    name: JAPON
+    id: 107
+  JO:
+    name: JORDANIA
+    id: 108
+  KZ:
+    name: KAZAJSTAN
+    id: 109
+  KE:
+    name: KENIA
+    id: 110
+  KG:
+    name: KIRGUISTAN
+    id: 111
+  KW:
+    name: KUWAIT
+    id: 112
+  LA:
+    name: LAOS
+    id: 113
+  LS:
+    name: LESOTHO
+    id: 115
+  LV:
+    name: LETONIA
+    id: 116
+  LB:
+    name: LIBANO
+    id: 117
+  LR:
+    name: LIBERIA
+    id: 118
+  LY:
+    name: LIBIA
+    id: 119
+  LI:
+    name: LIECHTENTEIN
+    id: 120
+  LT:
+    name: LITUANIA
+    id: 121
+  LU:
+    name: LUXEMBURGO
+    id: 122
+  MK:
+    name: MACEDONIA
+    id: 124
+  MG:
+    name: MADAGASCAR
+    id: 125
+  MY:
+    name: MALASIA
+    id: 126
+  MW:
+    name: MALAWI
+    id: 127
+  ML:
+    name: MALI
+    id: 129
+  MA:
+    name: MARRUECOS
+    id: 130
+  MU:
+    name: MAURICIO
+    id: 131
+  MR:
+    name: MAURITANIA
+    id: 132
+  MD:
+    name: MOLDOVA
+    id: 133
+  MC:
+    name: MONACO
+    id: 134
+  MN:
+    name: MONGOLIA
+    id: 135
+  ME:
+    name: MONTENEGRO
+    id: 136
+  MZ:
+    name: MOZAMBIQUE
+    id: 137
+  NA:
+    name: NAMIBIA
+    id: 139
+  NP:
+    name: NEPAL
+    id: 140
+  NI:
+    name: NICARAGUA
+    id: 141
+  NE:
+    name: NIGER
+    id: 142
+  NG:
+    name: NIGERIA
+    id: 143
+  NO:
+    name: NORUEGA
+    id: 144
+  NZ:
+    name: NUEVA ZELANDA
+    id: 145
+  OM:
+    name: OMAN
+    id: 146
+  PA:
+    name: PANAMA
+    id: 147
+  PK:
+    name: PAQUISTAN
+    id: 148
+  PY:
+    name: PARAGUAY
+    id: 149
+  PE:
+    name: PERU
+    id: 150
+  PL:
+    name: POLONIA
+    id: 151
+  PT:
+    name: PORTUGAL
+    id: 152
+  PR:
+    name: PUERTO RICO
+    id: 153
+  CF:
+    name: REP CENTRO AFRICANA
+    id: 156
+  CD:
+    name: REP DEL CONGO
+    id: 157
+  CZ:
+    name: REPUBLICA CHECA
+    id: 158
+  SG:
+    name: REPUBLICA DE SINGAPUR
+    id: 159
+  DO:
+    name: REPUBLICA DOMINICANA
+    id: 160
+  RW:
+    name: RUANDA
+    id: 162
+  RO:
+    name: RUMANIA
+    id: 163
+  EH:
+    name: SAHARA ESPAÑOL
+    id: 166
+  SN:
+    name: SENEGAL
+    id: 170
+  RS:
+    name: SERBIA
+    id: 171
+  RS:
+    name: SERVIA
+    id: 172
+  SL:
+    name: SIERRA LEONA
+    id: 174
+  SY:
+    name: SIRIA
+    id: 175
+  SO:
+    name: SOMALIA
+    id: 176
+  LK:
+    name: SRI LANKA
+    id: 177
+  SZ:
+    name: SUAZILANDIA
+    id: 178
+  ZA:
+    name: SUDAFRICA
+    id: 179
+  SD:
+    name: SUDAN
+    id: 180
+  SE:
+    name: SUECIA
+    id: 181
+  CH:
+    name: SUIZA
+    id: 182
+  TH:
+    name: TAILANDIA
+    id: 184
+  TW:
+    name: TAIWAN
+    id: 185
+  TZ:
+    name: TANZANIA
+    id: 186
+  TJ:
+    name: TAYIKISTAN
+    id: 187
+  TG:
+    name: TOGO
+    id: 188
+  TT:
+    name: TRINIDAD TOBAGO
+    id: 190
+  TN:
+    name: TUNEZ
+    id: 191
+  TM:
+    name: TURKMENISTAN
+    id: 192
+  TR:
+    name: TURQUIA
+    id: 193
+  UA:
+    name: UCRANIA
+    id: 194
+  UG:
+    name: UGANDA
+    id: 195
+  UY:
+    name: URUGUAY
+    id: 196
+  UZ:
+    name: UZBEKISTAN
+    id: 197
+  VE:
+    name: VENEZUELA
+    id: 199
+  VN:
+    name: VIETNAM
+    id: 200
+  YE:
+    name: YEMEN
+    id: 201
+  ZM:
+    name: ZAMBIA
+    id: 204
+  XX:
+    name: NINGUNO
+    id: 206
+locations:
+  not_identified:
+    id: 99999999
+legal_entity_types:
+  fisica: '1'
+  moral: '2'
