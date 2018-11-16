@@ -70,7 +70,7 @@ module Siprelad
     end
 
     def self.create(params = {})
-      insert({
+      insert(
         'IdSucursalSocio' => 0,
         'IdGrupo' => 0,
         'NoDeCliente' => params.fetch(:id),
@@ -108,7 +108,7 @@ module Siprelad
         'TipoUsoTerceros' => 1,
         'TipoCuentaBancaria' => nil,
         'RecepcionPago' => nil
-      }).first
+      ).first
     end
 
     def id

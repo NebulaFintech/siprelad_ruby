@@ -35,12 +35,12 @@ module Siprelad
     end
 
     def self.create(params = {})
-      insert({
+      insert(
         'IdOrigen' => 0,
         'IdGrupo' => 0,
         'NoDeCliente' => params.fetch(:customer_id),
         'IdOrigenp' => 0,
-        'IdProducto' => 0,
+        'IdProducto' => params.fetch(:loan_product_id),
         'IdAuxiliar' => params.fetch(:id),
         'Tipo_instrumento' => '03',
         'Fecha_originacion' => parse_date(params.fetch(:expected_disbursement_at)),
@@ -53,7 +53,7 @@ module Siprelad
         'OrigenRecursos' => '002',
         'DestinoRecursos' => '002',
         'FrecuenciaPago' => '02',
-      })
+      )
     end
 
     def id
@@ -66,10 +66,6 @@ module Siprelad
 
     def self.insert_operation
       :contrato_insert_sofom
-    end
-
-    def self.select_id_operation
-      :contrato_select_id
     end
   end
 end

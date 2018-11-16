@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Body>
+    <OperacionInsert_SOFOMResponse xmlns="http://tempuri.org/">
+      <OperacionInsert_SOFOMResult xmlns:a="http://schemas.datacontract.org/2004/07/WCF_PLD.Clases" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <a:OperacionSOFOM>
+          <a:Efectivo i:nil="true"/>
+          <a:Fecha i:nil="true"/>
+          <a:IdAuxiliar i:nil="true"/>
+          <a:IdGrupo i:nil="true"/>
+          <a:IdOperacion i:nil="true"/>
+          <a:IdOrigen i:nil="true"/>
+          <a:IdOrigenOperacion i:nil="true"/>
+          <a:IdOrigenp i:nil="true"/>
+          <a:IdProducto i:nil="true"/>
+          <a:LogError> /NoDeCliente(Persona) es requerido /IdAuxiliar(Contrato) no existe para el NoDeCliente(Persona) /IdOrigenOperacion es requerido</a:LogError>
+          <a:Moneda i:nil="true"/>
+          <a:NoDeCliente i:nil="true"/>
+          <a:Otros i:nil="true"/>
+          <a:Saldo_credito i:nil="true"/>
+          <a:Tipo_Operacion i:nil="true"/>
+          <a:Total_Operacion i:nil="true"/>
+        </a:OperacionSOFOM>
+      </OperacionInsert_SOFOMResult>
+    </OperacionInsert_SOFOMResponse>
+  </s:Body>
+</s:Envelope>

@@ -28,7 +28,8 @@ RSpec.describe Siprelad::Contract do
         monthly_repayment: 780,
         liquidation_date: Date.parse('15-05-2018'),
         currency: :mxn,
-        principal: 10_000
+        principal: 10_000,
+        loan_product_id: 1
       )}.to_not raise_error
   end
 end
