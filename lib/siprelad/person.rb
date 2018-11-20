@@ -72,12 +72,12 @@ module Siprelad
 
     def self.create(params = {})
       insert(
-        'IdSucursalSocio' => 0,
-        'IdGrupo' => 0,
+        'IdSucursalSocio' => 1,
+        'IdGrupo' => 1,
         'NoDeCliente' => params.fetch(:id),
-        'Nombre' => params.fetch(:given_names),
         'APaterno' => params.fetch(:paternal_surname),
         'AMaterno' => params.fetch(:maternal_surname),
+        'Nombre' => params.fetch(:given_names),
         'RFC' => params.fetch(:rfc),
         'CURP' => params.fetch(:curp),
         'IdTipoPersona' => 1,

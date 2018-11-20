@@ -29,7 +29,7 @@
           <a:IdPaisDeNacimiento i:nil="true"/>
           <a:IdSucursalSocio i:nil="true"/>
           <a:IdTipoPersona i:nil="true"/>
-          <a:LogError> / RFC ya existe</a:LogError>
+          <a:LogError>Se inserto correctamente cliente: 30 20/11/2018 10:30:43 p. m.</a:LogError>
           <a:NoDeCliente i:nil="true"/>
           <a:Nombre i:nil="true"/>
           <a:NumeroExt i:nil="true"/>
