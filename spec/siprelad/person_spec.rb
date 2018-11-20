@@ -49,7 +49,7 @@ RSpec.describe Siprelad::Person do
         id: 1,
         given_names: 'Mauricio Fernando',
         paternal_surname: 'Murga',
-        mothers_maiden_name: 'González',
+        maternal_surname: 'González',
         rfc: 'MUGM8902152V4',
         curp: 'MUGM890215HNLRNR06',
         birth_date: Date.parse('15-02-1989'),

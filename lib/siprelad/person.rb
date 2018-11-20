@@ -64,10 +64,10 @@ module Siprelad
     def self.where(params = {})
       given_names = params.fetch(:given_names, nil)
       paternal_surname = params.fetch(:paternal_surname, nil)
-      mothers_maiden_name = params.fetch(:mothers_maiden_name, nil)
-      raise 'Given names or surnames must be given!' if (given_names.to_s + paternal_surname.to_s + mothers_maiden_name.to_s).blank?
+      maternal_surname = params.fetch(:maternal_surname, nil)
+      raise 'Given names or surnames must be given!' if (given_names.to_s + paternal_surname.to_s + maternal_surname.to_s).blank?
 
-      select('Nombre' => given_names, 'APaterno' => paternal_surname, 'AMaterno' => mothers_maiden_name)
+      select('Nombre' => given_names, 'APaterno' => paternal_surname, 'AMaterno' => maternal_surname)
     end
 
     def self.create(params = {})
@@ -77,7 +77,7 @@ module Siprelad
         'NoDeCliente' => params.fetch(:id),
         'Nombre' => params.fetch(:given_names),
         'APaterno' => params.fetch(:paternal_surname),
-        'AMaterno' => params.fetch(:mothers_maiden_name),
+        'AMaterno' => params.fetch(:maternal_surname),
         'RFC' => params.fetch(:rfc),
         'CURP' => params.fetch(:curp),
         'IdTipoPersona' => 1,
