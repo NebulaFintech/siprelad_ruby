@@ -37,7 +37,11 @@ module Siprelad
     end
 
     def self.check_for_errors(k, v)
-      raise v if k == :log_error && v.to_s.match('/') && !v.match('insertado') && !v.match('inserto')
+      if k == :log_error
+        if v.present? && (v.match('/') || v.match('Exception')) && !v.match('insertado') && !v.match('inserto') && !v.match('insertada')
+          raise v
+        end
+      end
     end
 
     def self.parse_date(date)

@@ -52,7 +52,7 @@ module Siprelad
         'OrigenRecursos' => '002',
         'DestinoRecursos' => '002',
         'FrecuenciaPago' => '02'
-      )
+      ).first
     end
 
     def id

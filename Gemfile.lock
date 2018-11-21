@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    siprelad (0.1.2)
+    siprelad (0.1.4)
       activesupport
       savon
 

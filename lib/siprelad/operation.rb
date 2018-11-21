@@ -31,18 +31,19 @@ module Siprelad
         'IdOperacion' => params.fetch(:id),
         'IdOrigen' => 0,
         'IdGrupo' => 0,
-        'NoDeCliente' => params.fetch(:customer_id),
+        'NoDecliente' => params.fetch(:customer_id),
         'IdOrigenp' => 0,
         'IdProducto' => params.fetch(:loan_product_id),
         'IdAuxiliar' => params.fetch(:contract_id),
-        'Fecha' => params.fetch(:operation_date),
-        'Efectivo' => 0,
+        'Fecha' => parse_date(params.fetch(:operation_date)),
+        'Efectivo' => nil,
         'Otros' => '03',
         'Total_Operacion' => params.fetch(:operation_amount),
         'Tipo_Operacion' => '03',
         'Moneda' => params.fetch(:currency),
-        'Saldo_credito' => params.fetch(:loan_balance)
-      )
+        'Saldo_credito' => params.fetch(:loan_balance),
+        'IdOrigenOperacion' => 1
+      ).first
     end
 
     def id
