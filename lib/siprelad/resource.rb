@@ -99,5 +99,27 @@ module Siprelad
 
       (Date.current - date.to_date).to_i / 365
     end
+
+    def parse_payment_method(payment_method)
+      case payment_method
+      when :transfer_payment
+        '03'
+      when :referenced_payment
+        '01'
+      else
+        raise "Unknown payment_method #{payment_method}"
+      end
+    end
+
+    def parse_operation_type(operation_type)
+      case operation_type
+      when :disbursal
+        '08'
+      when :payment
+        '09'
+      when :liquidation
+        '41'
+      end
+    end
   end
 end

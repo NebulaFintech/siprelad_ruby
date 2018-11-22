@@ -37,9 +37,9 @@ module Siprelad
         'IdAuxiliar' => params.fetch(:contract_id),
         'Fecha' => parse_date(params.fetch(:operation_date)),
         'Efectivo' => nil,
-        'Otros' => '03',
+        'Otros' => parse_payment_method(params.fetch(:payment_method)),
         'Total_Operacion' => params.fetch(:operation_amount),
-        'Tipo_Operacion' => '03',
+        'Tipo_Operacion' => parse_operation_type(params.fetch(:operation_type)),
         'Moneda' => params.fetch(:currency),
         'Saldo_credito' => params.fetch(:loan_balance),
         'IdOrigenOperacion' => 1
