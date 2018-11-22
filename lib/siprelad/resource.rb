@@ -100,7 +100,7 @@ module Siprelad
       (Date.current - date.to_date).to_i / 365
     end
 
-    def parse_payment_method(payment_method)
+    def self.parse_payment_method(payment_method)
       case payment_method
       when :transfer_payment
         '03'
@@ -111,7 +111,7 @@ module Siprelad
       end
     end
 
-    def parse_operation_type(operation_type)
+    def self.parse_operation_type(operation_type)
       case operation_type
       when :disbursal
         '08'
