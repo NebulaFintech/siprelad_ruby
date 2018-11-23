@@ -31,6 +31,8 @@ module Siprelad
 
     def self.find(id)
       select('IdAuxiliar' => id).first
+    rescue
+      nil
     end
 
     def self.create(params = {})

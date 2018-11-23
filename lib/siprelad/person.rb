@@ -59,6 +59,8 @@ module Siprelad
 
     def self.find(id)
       select_id('NoDeCliente' => id).first
+    rescue
+      nil
     end
 
     def self.where(params = {})

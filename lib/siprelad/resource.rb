@@ -25,25 +25,27 @@ module Siprelad
 
     def self.parse_response_object(response_object)
       object = new
+      response_message = nil
       response_object.each do |field|
+        response_message = field.last if field.first == :log_error
         set_instance_variables(object, field)
       end
+      raise response_message if check_for_errors(response_message)
       object
+    end
+
+    def self.check_for_errors(response_message)
+      response_message.present? &&
+      (response_message.match('/') || response_message.match('Exception') || response_message.match('o se enc')) &&
+      !response_message.match('insertado') &&
+      !response_message.match('inserto') &&
+      !response_message.match('insertada')
     end
 
     def self.set_instance_variables(object, field)
       k = field.first
       v = field.last
-      check_for_errors(k, v)
       object.instance_variable_set(:"@#{k}", v) if self::ATTRIBUTES.include?(k.to_sym)
-    end
-
-    def self.check_for_errors(k, v)
-      if k == :log_error
-        if v.present? && (v.match('/') || v.match('Exception')) && !v.match('insertado') && !v.match('inserto') && !v.match('insertada')
-          raise v
-        end
-      end
     end
 
     def self.parse_date(date)
