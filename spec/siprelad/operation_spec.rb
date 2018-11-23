@@ -20,7 +20,9 @@ RSpec.describe Siprelad::Operation do
         operation_date: Date.parse('15-06-2017'),
         operation_amount: 780,
         currency: :mxn,
-        loan_balance: 9_220
+        loan_balance: 9_220,
+        payment_method: :transfer_payment,
+        operation_type: :disbursal
       )
     end .to raise_error(RuntimeError, ' /NoDeCliente(Persona) es requerido /IdAuxiliar(Contrato) no existe para el NoDeCliente(Persona) /IdOrigenOperacion es requerido')
   end

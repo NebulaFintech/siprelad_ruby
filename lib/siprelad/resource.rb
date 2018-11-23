@@ -9,6 +9,8 @@ module Siprelad
         response_body.each do |response_object|
           response_objects << parse_response_object(response_object)
         end
+      elsif response_body.is_a?(String)
+        []
       else
         response_objects << parse_response_object(response_body)
       end
