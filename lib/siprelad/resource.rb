@@ -36,10 +36,12 @@ module Siprelad
 
     def self.check_for_errors(response_message)
       response_message.present? &&
-      (response_message.match('/') || response_message.match('Exception') || response_message.match('o se enc')) &&
-      !response_message.match('insertado') &&
-      !response_message.match('inserto') &&
-      !response_message.match('insertada')
+        !response_message.match('Se inserto correctamente cliente') &&
+        !response_message.match('Actualizado con exito cliente') &&
+        !response_message.match('Contrato insertado con exito') &&
+        !response_message.match('Contrato actualizado con exito') &&
+        !response_message.match('Operacion insertada con exito') &&
+        !response_message.match('Operacion actualizada con exito')
     end
 
     def self.set_instance_variables(object, field)
@@ -123,6 +125,8 @@ module Siprelad
         '09'
       when :liquidation
         '41'
+      else
+        raise "Unknown operation_type #{operation_type}"
       end
     end
   end
