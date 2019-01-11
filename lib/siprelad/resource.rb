@@ -117,6 +117,17 @@ module Siprelad
       end
     end
 
+    def self.parse_cash(payment_method, amount)
+      case payment_method
+      when :transfer_payment
+        nil
+      when :referenced_payment
+        amount
+      else
+        raise "Unknown payment_method #{payment_method}"
+      end
+    end
+
     def self.parse_operation_type(operation_type)
       case operation_type
       when :disbursal

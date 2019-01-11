@@ -36,7 +36,7 @@ module Siprelad
         'IdProducto' => params.fetch(:loan_product_id),
         'IdAuxiliar' => params.fetch(:contract_id),
         'Fecha' => parse_date(params.fetch(:operation_date)),
-        'Efectivo' => nil,
+        'Efectivo' => parse_cash(params.fetch(:payment_method), params.fetch(:operation_amount)),
         'Otros' => parse_payment_method(params.fetch(:payment_method)),
         'Total_Operacion' => params.fetch(:operation_amount),
         'Tipo_Operacion' => parse_operation_type(params.fetch(:operation_type)),
