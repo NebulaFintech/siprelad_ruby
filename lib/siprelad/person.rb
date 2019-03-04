@@ -95,7 +95,7 @@ module Siprelad
         'IdPais' => parse_country(params.fetch(:country, 1)),
         'TelefonoParticularUOficina' => params.fetch(:mobile_phone),
         'IdOcupacion' => nil,
-        'FechaDeIngreso' => parse_date(params.fetch(:starting_working_date)),
+        'FechaDeIngreso' => parse_date(params.fetch(:registration_date)),
         'IdActividadEconomica' => params.fetch(:economic_activity_code),
         'Genero' => parse_gender(params.fetch(:gender)),
         'IdPaisDeNacimiento' => parse_country(params.fetch(:country_of_birth)),

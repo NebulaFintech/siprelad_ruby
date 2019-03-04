@@ -71,7 +71,8 @@ RSpec.describe Siprelad::Person do
         email: 'mauricio.murga@gonebula.io',
         civil_status: :married,
         housing_type: :owned,
-        lived_in_since: Date.parse('15-02-1989')
+        lived_in_since: Date.parse('15-02-1989'),
+        registration_date: Date.current
       )
     end .to_not raise_error
   end
@@ -104,7 +105,8 @@ RSpec.describe Siprelad::Person do
         email: 'mauricio.murga@gonebula.io',
         civil_status: :married,
         housing_type: :owned,
-        lived_in_since: Date.parse('15-02-1989')
+        lived_in_since: Date.parse('15-02-1989'),
+        registration_date: Date.current
       )
     end .to raise_error(RuntimeError, ' / RFC ya existe')
   end
