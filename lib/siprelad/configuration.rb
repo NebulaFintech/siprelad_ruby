@@ -6,7 +6,7 @@ module Siprelad
     def initialize
       @open_timeout = 5
       @read_timeout = 5
-      @environment = ENV['RAILS_ENV']
+      @environment = ENV['RAILS_ENV'] || ENV['RACK_ENV']
       @wsdl = (production? ? 'http://internal-elb-shared-priv-pld-1296134306.us-east-1.elb.amazonaws.com/WCF_PLD/ServicePLD.svc?singleWsdl' :
                              'https://pld-stage.gonebula.io/WCF_PLD/ServicePLD.svc?singleWsdl')
     end
