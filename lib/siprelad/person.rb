@@ -100,7 +100,7 @@ module Siprelad
         'Genero' => parse_gender(params.fetch(:gender)),
         'IdPaisDeNacimiento' => parse_country(params.fetch(:country_of_birth)),
         'NumeroIdOficial' => params.fetch(:responsible_id, nil),
-        'FirmaElectronica' => params.fetch(:fea_reference_id).to_i,
+        'FirmaElectronica' => params.fetch(:fea_reference_id, nil),
         'EstadoNacimiento' => params.fetch(:province_of_birth_pld_id),
         'CorreoElectronico' => params.fetch(:email),
         'PF_ConActividadEmpresarial' => 0,
