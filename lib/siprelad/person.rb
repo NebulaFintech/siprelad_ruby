@@ -2,6 +2,7 @@ module Siprelad
   class Person < Resource
     include Mixins::Select
     include Mixins::Insert
+    include Mixins::Update
     ATTRIBUTES = %i[a_materno a_paterno antiguedad_domicilio
                     antiguedad_laboral curp calle codigo_postal colonia
                     correo_electronico estado_civil estado_nacimiento
@@ -128,6 +129,10 @@ module Siprelad
 
     def self.insert_operation
       :persona_insert_sofom
+    end
+
+    def self.update_operation
+      :persona_update_sofom
     end
   end
 end

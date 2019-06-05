@@ -1,6 +1,7 @@
 require 'siprelad/version'
 require 'siprelad/mixins/select'
 require 'siprelad/mixins/insert'
+require 'siprelad/mixins/update'
 require 'siprelad/resource'
 require 'siprelad/person'
 require 'siprelad/contract'
