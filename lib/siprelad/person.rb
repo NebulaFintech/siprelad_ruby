@@ -115,6 +115,48 @@ module Siprelad
       ).first
     end
 
+    def self.update(params = {})
+      _update(
+        'IdSucursalSocio' => 1,
+        'IdGrupo' => 1,
+        'NoDeCliente' => params.fetch(:id),
+        'APaterno' => params.fetch(:paternal_surname),
+        'AMaterno' => params.fetch(:maternal_surname),
+        'Nombre' => params.fetch(:given_names),
+        'RFC' => params.fetch(:rfc),
+        'CURP' => params.fetch(:curp),
+        'IdTipoPersona' => 1,
+        'FechaDeNacimientoOConstitucio' => params.fetch(:birth_date).strftime('%d/%m/%Y'),
+        'IdNacionalidad' => 1,
+        'Calle' => params.fetch(:street1),
+        'NumeroExt' => params.fetch(:external_number),
+        'NumeroInt' => params.fetch(:internal_number, nil),
+        'Colonia' => params.fetch(:neighborhood),
+        'IdLocalidad' => params.fetch(:municipality_pld_id),
+        'IdEstado' => params.fetch(:state_pld_id),
+        'CodigoPostal' => params.fetch(:postal_code),
+        'IdPais' => parse_country(params.fetch(:country, 1)),
+        'TelefonoParticularUOficina' => params.fetch(:mobile_phone),
+        'IdOcupacion' => nil,
+        'FechaDeIngreso' => parse_date(params.fetch(:registration_date)),
+        'IdActividadEconomica' => params.fetch(:economic_activity_code),
+        'Genero' => parse_gender(params.fetch(:gender)),
+        'IdPaisDeNacimiento' => parse_country(params.fetch(:country_of_birth)),
+        'NumeroIdOficial' => params.fetch(:responsible_id, nil),
+        'FirmaElectronica' => params.fetch(:fea_reference_id, nil),
+        'EstadoNacimiento' => params.fetch(:province_of_birth_pld_id),
+        'CorreoElectronico' => params.fetch(:email),
+        'PF_ConActividadEmpresarial' => 0,
+        'EstadoCivil' => parse_civil_status(params.fetch(:civil_status)),
+        'TipoDomicilio' => parse_housing_type(params.fetch(:housing_type)),
+        'AntiguedadDomicilio' => years_since(params.fetch(:lived_in_since)),
+        'AntiguedadLaboral' => years_since(params.fetch(:starting_working_date)),
+        'TipoUsoTerceros' => 1,
+        'TipoCuentaBancaria' => nil,
+        'RecepcionPago' => nil
+      ).first
+    end
+
     def id
       no_de_cliente.to_i
     end
