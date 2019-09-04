@@ -40,7 +40,7 @@ module Siprelad
         'IdOrigen' => 0,
         'IdGrupo' => 0,
         'NoDeCliente' => params.fetch(:customer_id),
-        'IdOrigenp' => 0,
+        'IdOrigenp' => 1,
         'IdProducto' => params.fetch(:loan_product_id),
         'IdAuxiliar' => params.fetch(:id),
         'Tipo_instrumento' => '03',
