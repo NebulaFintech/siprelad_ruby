@@ -108,6 +108,8 @@ module Siprelad
 
     def self.parse_payment_method(payment_method)
       case payment_method
+      when :loan_liquidation
+        '41'
       when :transfer_payment
         '03'
       when :referenced_payment
