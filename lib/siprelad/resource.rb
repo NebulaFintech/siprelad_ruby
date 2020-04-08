@@ -123,6 +123,8 @@ module Siprelad
       case payment_method
       when :transfer_payment
         nil
+      when :loan_liquidation
+        nil
       when :referenced_payment
         amount
       else
