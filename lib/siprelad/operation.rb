@@ -42,7 +42,10 @@ module Siprelad
         'Tipo_Operacion' => parse_operation_type(params.fetch(:operation_type)),
         'Moneda' => params.fetch(:currency),
         'Saldo_credito' => params.fetch(:loan_balance),
-        'IdOrigenOperacion' => 1
+        'IdOrigenOperacion' => 1,
+        'IdLocalidad' => params.fetch(:municipality_pld_id),
+        'IdEstado' => params.fetch(:state_pld_id),
+        'IdPais' => parse_country(params.fetch(:country, 'mx'))
       ).first
     end
 

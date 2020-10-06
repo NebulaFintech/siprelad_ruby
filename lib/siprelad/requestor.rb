@@ -17,7 +17,7 @@ module Siprelad
     private
 
     def authentication
-      { 'Usuario' => Siprelad.configuration.user, 'Contrasena' => Siprelad.configuration.password }
+      { 'Usuario' => Siprelad.configuration.user, 'Contrasena' => Siprelad.configuration.password, 'Nombre' => 'Mauricio' }
     end
   end
 end

@@ -22,7 +22,9 @@ RSpec.describe Siprelad::Operation do
         currency: :mxn,
         loan_balance: 9_220,
         payment_method: :transfer_payment,
-        operation_type: :disbursal
+        operation_type: :disbursal,
+        municipality_pld_id: '02340009',
+        state_pld_id: '9'
       )
     end .to raise_error(RuntimeError, ' /NoDeCliente(Persona) es requerido /IdAuxiliar(Contrato) no existe para el NoDeCliente(Persona) /IdOrigenOperacion es requerido')
   end
