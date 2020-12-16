@@ -2,6 +2,7 @@ module Siprelad
   class Contract < Resource
     include Mixins::Select
     include Mixins::Insert
+    include Mixins::Update
     ATTRIBUTES = %i[destino_recursos fecha_originacion fecha_vencimiento
                     frecuencia_pago id_auxiliar id_grupo id_origen id_origenp id_producto
                     importe_mensualidad moneda_credito monto_credito no_de_cliente
@@ -57,6 +58,28 @@ module Siprelad
       ).first
     end
 
+    def self.update(params = {})
+      _update(
+        'IdOrigen' => 0,
+        'IdGrupo' => 0,
+        'NoDeCliente' => params.fetch(:customer_id),
+        'IdOrigenp' => 1,
+        'IdProducto' => params.fetch(:loan_product_id),
+        'IdAuxiliar' => params.fetch(:id),
+        'Tipo_instrumento' => '03',
+        'Fecha_originacion' => parse_date(params.fetch(:expected_disbursement_at)),
+        'Fecha_vencimiento' => parse_date(params.fetch(:liquidation_date)),
+        'Sueldo_mensual' => params.fetch(:monthly_income).to_f,
+        'Plazo' => params.fetch(:months_duration),
+        'Importe_mensualidad' => params.fetch(:monthly_repayment),
+        'Moneda_credito' => params.fetch(:currency),
+        'Monto_credito' => params.fetch(:principal),
+        'OrigenRecursos' => '002',
+        'DestinoRecursos' => '002',
+        'FrecuenciaPago' => '02'
+      ).first
+    end
+
     def id
       id_auxiliar.to_i
     end
@@ -67,6 +90,10 @@ module Siprelad
 
     def self.insert_operation
       :contrato_insert_sofom
+    end
+
+    def self.update_operation
+      :contrato_update_sofom
     end
   end
 end
