@@ -1,14 +1,13 @@
 module Siprelad
   class Configuration
-    attr_accessor :environment, :wsdl, :connection, :open_timeout, :read_timeout,
-                  :user, :password
+    attr_accessor :wsdl, :connection,
+      :open_timeout, :read_timeout,
+      :user, :password
 
     def initialize
       @open_timeout = 5
       @read_timeout = 5
-      @environment = ENV['RAILS_ENV'] || ENV['RACK_ENV']
-      @wsdl = (production? ? 'http://internal-elb-shared-priv-pld-1296134306.us-east-1.elb.amazonaws.com/WCF_PLD/ServicePLD.svc?singleWsdl' :
-                             'https://pld-stage.gonebula.io/WCF_PLD/ServicePLD.svc?singleWsdl')
+      @wsld = ENV['SIPRELAD_ELB'].to_s + ENV['SIPRELAD_WSDL'].to_s
     end
 
     def namespaces
@@ -17,12 +16,6 @@ module Siprelad
         'xmlns:xsd' => 'http://www.w3.org/2001/XMLSchema',
         'xmlns:tem' => 'http://tempuri.org/'
       }
-    end
-
-    private
-
-    def production?
-      environment == 'production'
     end
   end
 end
