@@ -73,9 +73,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.16.a)
-  rake (~> 13.0)
-  rspec (~> 3.0)
+  bundler
+  rake
+  rspec
   siprelad!
 
 BUNDLED WITH
