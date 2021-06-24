@@ -27,10 +27,22 @@ RSpec.describe Siprelad::Requestor do
         end.to raise_error('password has not been set!')
       end
 
+      it 'fails if wsdl is not configured' do
+        Siprelad.configure do |config|
+          config.user = 'user'
+          config.password = 'password'
+        end
+
+        expect do
+          Siprelad::Requestor.new
+        end.to raise_error('wsdl has not been set!')
+      end
+
       it 'does not fail if everything is configured' do
         Siprelad.configure do |config|
           config.user = 'user'
           config.password = 'password'
+          config.wsdl = 'https://www.example.com'
         end
 
         expect do

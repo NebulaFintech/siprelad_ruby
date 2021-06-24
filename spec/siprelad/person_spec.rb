@@ -10,6 +10,7 @@ RSpec.describe Siprelad::Person do
     Siprelad.configure do |config|
       config.user = configuration['user']
       config.password = configuration['password']
+      config.wsdl = configuration['wsdl']
     end
   end
 

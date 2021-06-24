@@ -4,9 +4,11 @@ module Siprelad
     def initialize
       @user = Siprelad.configuration.user
       @password = Siprelad.configuration.password
+      wsdl = Siprelad.configuration.wsdl
       @connection = Siprelad.configuration.connection
       raise 'user has not been set!' if @user.blank?
       raise 'password has not been set!' if @password.blank?
+      raise 'wsdl has not been set!' if wsdl.blank?
     end
 
     def request(operation, params = {})

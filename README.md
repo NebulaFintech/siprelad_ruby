@@ -20,6 +20,7 @@ And then execute:
 Siprelad.configure do |config|
   config.user = "myuser"
   config.password = "mypassword"
+  config.wsdl = 'https://www.example.com'
 end
 person = Siprelad::Person.where(given_names: 'JAIME').first
 ```
