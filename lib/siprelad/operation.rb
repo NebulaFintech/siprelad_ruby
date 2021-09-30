@@ -33,7 +33,7 @@ module Siprelad
         'IdOperacion' => params.fetch(:id),
         'IdOrigen' => 0,
         'IdGrupo' => 0,
-        'NoDecliente' => params.fetch(:customer_id),
+        'NoDeCliente' => params.fetch(:customer_id),
         'IdOrigenp' => 0,
         'IdProducto' => params.fetch(:loan_product_id),
         'IdAuxiliar' => params.fetch(:contract_id),
