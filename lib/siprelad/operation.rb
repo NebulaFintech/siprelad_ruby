@@ -4,7 +4,7 @@ module Siprelad
     ATTRIBUTES = %i[id_operacion id_origen id_grupo no_de_cliente
                     id_origenp id_producto id_auxiliar fecha efectivo otros
                     total_operacion tipo_operacion moneda saldo_credito
-                    id_origen_operacion].freeze
+                    id_origen_operacion id_banco numero_cuenta].freeze
 
     attr_reader(*ATTRIBUTES)
     # insert and update param
@@ -23,6 +23,8 @@ module Siprelad
     # @Moneda
     # @Saldo_credito
     # @IdOrigenOperacion
+    # @IdBanco
+    # @NumeroCuenta
 
     def initialize(options = {}); end
 
@@ -45,7 +47,9 @@ module Siprelad
         'IdOrigenOperacion' => 1,
         'IdLocalidad' => params.fetch(:municipality_pld_id),
         'IdEstado' => params.fetch(:state_pld_id),
-        'IdPais' => parse_country(params.fetch(:country, 'mx'))
+        'IdPais' => parse_country(params.fetch(:country, 'mx')),
+        'IdBanco' => params.fetch(:bank_id, ''),
+        'NumeroCuenta' => params.fetch(:bank_account_number, '')
       ).first
     end
 
