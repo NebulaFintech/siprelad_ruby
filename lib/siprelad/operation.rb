@@ -45,9 +45,9 @@ module Siprelad
         'Moneda' => params.fetch(:currency),
         'Saldo_credito' => params.fetch(:loan_balance),
         'IdOrigenOperacion' => 1,
-        'IdLocalidad' => params.fetch(:municipality_pld_id),
-        'IdEstado' => params.fetch(:state_pld_id),
-        'IdPais' => parse_country(params.fetch(:country, 'mx')),
+        'IdLocalidadOrigen' => params.fetch(:municipality_pld_id),
+        'IdEstadoOrigen' => params.fetch(:state_pld_id),
+        'IdPaisOrigen' => parse_country(params.fetch(:country, 'mx')),
         'IdBanco' => params.fetch(:bank_id, ''),
         'NumeroCuenta' => params.fetch(:bank_account_number, '')
       ).first
